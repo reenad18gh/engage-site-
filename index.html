@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Engage Interactive — IT & Creative Solutions</title>
   <meta name="description" content="Engage Interactive — Saudi IT & Creative Digital Solutions. Immersive tech, interactive exhibits, projection mapping, and digital transformation." />
+  <meta name="theme-color" content="#0b0b0f">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Engage Interactive — IT & Creative Solutions">
+  <meta property="og:description" content="Immersive experiences, interactive installations, and enterprise IT aligned with Saudi Vision 2030.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="hero-poster.jpg">
+  <meta property="og:url" content="https://engagei.net/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -83,7 +91,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-3 h-16 items-center">
         <!-- Left: Nav (desktop) -->
-        <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 justify-self-start">
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/80 justify-self-start" aria-label="Primary">
           <a href="#about" class="hover:text-white">About</a>
           <a href="#services" class="hover:text-white">Services</a>
           <a href="#projects" class="hover:text-white">Projects</a>
@@ -93,8 +101,8 @@
         <!-- Center: Brand (with safe fallback) -->
         <!-- Fallback template must exist before the <img> onerror fires -->
         <template id="logoFallback">
-          <div class="h-8 w-8 rounded-xl bg-brand-500/20 grid place-items-center ring-1 ring-brand-500/40">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-brand-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v6m0 8v6m6-10h6M0 12h6m11.313-6.687-4.243 4.243m0 4.888 4.243 4.243M6.93 6.93l4.243 4.243m0 4.888L6.93 20.303"/></svg>
+          <div class="h-8 w-8 rounded-xl bg-brand-500/20 grid place-items-center ring-1 ring-brand-500/40" aria-label="Engage Interactive">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-brand-500" role="img" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v6m0 8v6m6-10h6M0 12h6m11.313-6.687-4.243 4.243m0 4.888 4.243 4.243M6.93 6.93l4.243 4.243m0 4.888L6.93 20.303"/></svg>
           </div>
         </template>
         <a href="#home" class="flex items-center gap-3 group justify-self-center">
@@ -104,13 +112,13 @@
         </a>
 
         <!-- Right: Mobile menu button -->
-        <button id="menuBtn" class="md:hidden justify-self-end inline-flex items-center justify-center rounded-xl p-2 text-white/80 hover:text-white hover:bg-white/10">
+        <button id="menuBtn" type="button" aria-controls="mobileMenu" aria-expanded="false" class="md:hidden justify-self-end inline-flex items-center justify-center rounded-xl p-2 text-white/80 hover:text-white hover:bg-white/10">
           <span class="sr-only">Open main menu</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-black/60">
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-black/60" role="dialog" aria-label="Mobile Menu">
       <div class="px-4 py-3 flex flex-col gap-3 text-white/80">
         <a href="#about" class="hover:text-white" onclick="toggleMenu()">About</a>
         <a href="#services" class="hover:text-white" onclick="toggleMenu()">Services</a>
@@ -128,15 +136,15 @@
         <source src="hero.webm" type="video/webm" />
         <source src="hero.mp4" type="video/mp4" />
       </video>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" aria-hidden="true"></div>
       <noscript>
         <div class="absolute inset-0 bg-[url('hero-poster.jpg')] bg-cover bg-center"></div>
       </noscript>
     </div>
 
-    <!-- Simple Mute/Unmute button (optional) -->
-    <button id="bgMute" class="absolute right-4 bottom-4 z-10 inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-lg bg-black/50 ring-1 ring-white/10 hover:bg-black/60">
-      🔇 Mute
+    <!-- Simple Mute/Unmute button (fixed labels, no emoji) -->
+    <button id="bgMute" type="button" class="absolute right-4 bottom-4 z-10 inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-lg bg-black/50 ring-1 ring-white/10 hover:bg-black/60">
+      Sound off
     </button>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,7 +159,7 @@
           <div class="flex flex-wrap items-center gap-3">
             <a href="#contact" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-3 rounded-xl font-medium shadow-glow transition">
               Talk to Us
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
             <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl ring-1 ring-white/15 hover:bg-white/5 text-white/80 transition">View Projects</a>
           </div>
@@ -164,7 +172,7 @@
         <div class="relative">
           <div class="aspect-[4/3] rounded-2xl border border-white/10 bg-white/5 overflow-hidden shadow-2xl float">
             <div class="w-full h-full bg-grid bg-[length:24px_24px] relative">
-              <div class="absolute inset-4 grid grid-cols-3 gap-4 p-2">
+              <div class="absolute inset-4 grid grid-cols-3 gap-4 p-2" aria-hidden="true">
                 <div class="col-span-2 rounded-xl bg-black/40 ring-1 ring-white/10 p-4">
                   <div class="h-40 rounded-lg bg-white/5 shimmer"></div>
                   <div class="mt-4 h-3 w-2/3 rounded bg-white/10"></div>
@@ -200,7 +208,7 @@
         <div>
           <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Engage Interactive</h2>
           <p class="text-white/70 leading-relaxed">Engage Interactive is a Saudi creative company specializing in <span class="text-white">Information Technology</span> and <span class="text-white">Creative Digital Solutions</span>. We merge innovation, technology, and art to deliver immersive experiences that engage audiences and transform ideas into interactive realities. Our work aligns with <span class="text-white">Saudi Vision 2030</span> and drives sustainable digital transformation.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
+          <div class="mt-6 flex flex-wrap gap-3" aria-label="Tags">
             <span class="px-3 py-1 rounded-full text-xs tracking-widest uppercase bg-white/5 ring-1 ring-white/10">Interactive Exhibits</span>
             <span class="px-3 py-1 rounded-full text-xs tracking-widest uppercase bg-white/5 ring-1 ring-white/10">Projection Mapping</span>
             <span class="px-3 py-1 rounded-full text-xs tracking-widest uppercase bg-white/5 ring-1 ring-white/10">IT Infrastructure</span>
@@ -246,7 +254,7 @@
             <h4 class="font-semibold text-lg">Immersive Museum</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">Design immersive museums that captivate and engage visitors using interactive displays and responsive media—from concept to execution.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
         <a href="#/service/expos" class="group rounded-2xl bg-black/40 ring-1 ring-white/10 p-6 service-card block" style="--card-accent: var(--brand-400)" data-id="expos" data-testid="svc-link-expos">
           <div class="flex items-center gap-3 mb-3">
@@ -254,7 +262,7 @@
             <h4 class="font-semibold text-lg">Expos</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">End‑to‑end expo strategy and production aligned to your goals and brand, built around rich visitor journeys.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
         <a href="#/service/smart-venues" class="group rounded-2xl bg-black/40 ring-1 ring-white/10 p-6 service-card block" style="--card-accent: var(--brand-300)" data-id="smart-venues" data-testid="svc-link-smart-venues">
           <div class="flex items-center gap-3 mb-3">
@@ -262,7 +270,7 @@
             <h4 class="font-semibold text-lg">Smart Venues</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">Blend technology with physical space—interactive libraries, digital cataloging, and responsive media environments.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
         <a href="#/service/simulators" class="group rounded-2xl bg-black/40 ring-1 ring-white/10 p-6 service-card block" style="--card-accent: var(--brand-600)" data-id="simulators" data-testid="svc-link-simulators">
           <div class="flex items-center gap-3 mb-3">
@@ -270,7 +278,7 @@
             <h4 class="font-semibold text-lg">Simulators</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">Consultation, setup, and operations for simulation environments (room‑scale / cave systems), training and best practices.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
         <a href="#/service/interactive-walls" class="group rounded-2xl bg-black/40 ring-1 ring-white/10 p-6 service-card block" style="--card-accent: var(--brand-700)" data-id="interactive-walls" data-testid="svc-link-interactive-walls">
           <div class="flex items-center gap-3 mb-3">
@@ -278,7 +286,7 @@
             <h4 class="font-semibold text-lg">Interactive Walls</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">From sensors to content pipelines—we deliver robust interactive walls that are visually stunning and maintainable.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
         <a href="#/service/e-sports" class="group rounded-2xl bg-black/40 ring-1 ring-white/10 p-6 service-card block" style="--card-accent: var(--brand-800)" data-id="e-sports" data-testid="svc-link-e-sports">
           <div class="flex items-center gap-3 mb-3">
@@ -286,23 +294,34 @@
             <h4 class="font-semibold text-lg">E‑Sports</h4>
           </div>
           <p class="text-white/70 text-sm leading-relaxed">End‑to‑end e‑sports activations with 360 domes, interactive projection, and holographic elements—concept to delivery.</p>
-          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          <span class="mt-4 inline-flex items-center gap-2 text-brand-300">Read more <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Service Detail (hash-router single page) -->
-  <section id="service-detail" class="fixed inset-0 z-50 hidden">
+  <section id="service-detail" class="fixed inset-0 z-50 hidden" aria-hidden="true">
     <div class="absolute inset-0 bg-black/70 backdrop-blur" id="svcBackdrop"></div>
-    <div class="relative max-w-3xl mx-auto my-10 p-6 rounded-2xl bg-[#0f1215] ring-1 ring-white/10">
+    <div class="relative max-w-3xl mx-auto my-10 p-6 rounded-2xl bg-[#0f1215] ring-1 ring-white/10" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
       <div class="flex items-center justify-between gap-4 mb-4">
         <h2 id="svcTitle" class="text-2xl font-bold">Service</h2>
-        <button id="svcClose" class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 ring-1 ring-white/10">Close ✕</button>
+        <button id="svcClose" type="button" class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 ring-1 ring-white/10" aria-label="Close">Close ✕</button>
       </div>
       <div id="svcBody" class="prose prose-invert max-w-none">
         <p>Loading…</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Video Modal (YouTube inside the site) -->
+  <section id="video-modal" class="fixed inset-0 z-50 hidden">
+    <div id="videoBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative max-w-5xl mx-auto my-10 aspect-video rounded-2xl overflow-hidden ring-1 ring-white/10 bg-black">
+      <iframe id="videoFrame" class="w-full h-full" src="" title="Project video" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+      <button id="videoClose" class="absolute top-3 right-3 inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/20">Close ✕</button>
     </div>
   </section>
 
@@ -314,7 +333,7 @@
       <!-- Intro copy -->
       <div class="rounded-3xl overflow-hidden ring-1 ring-white/10 mb-10">
         <div class="relative">
-          <div class="absolute inset-0 bg-[url('hero-poster.jpg')] bg-cover bg-center opacity-30"></div>
+          <div class="absolute inset-0 bg-[url('hero-poster.jpg')] bg-cover bg-center opacity-30" aria-hidden="true"></div>
           <div class="relative p-8 sm:p-12 bg-black/40 backdrop-blur">
             <h3 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4">Tailored Cutting-Edge Solutions for you</h3>
             <p class="text-white/80 max-w-4xl mx-auto text-center">Discover our captivating and innovative projects that push boundaries and create unforgettable experiences</p>
@@ -326,43 +345,48 @@
 
       <!-- Portfolio grid (small tiles that can link to YouTube) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        <a href="https://www.youtube.com/watch?v=uyFoUfmWgak" target="_blank" rel="noopener" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Interactive Museum – COIC">
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Interactive Museum – COIC" data-video="uyFoUfmWgak">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/uyFoUfmWgak/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
           <div class="absolute inset-x-2 bottom-2 flex items-center justify-between">
             <span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Interactive Museum – COIC</span>
-            <span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">YouTube ↗</span>
+            <span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span>
           </div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
-        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Science Oasis">
+
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Science Oasis" data-video="dQw4w9WgXcQ">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Science Oasis</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">View ↗</span></div>
+          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Science Oasis</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span></div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
-        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="The Executive Council">
+
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="The Executive Council" data-video="aqz-KE-bpKQ">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">The Executive Council</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">View ↗</span></div>
+          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">The Executive Council</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span></div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
-        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Aramco Cave Simulator">
+
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Aramco Cave Simulator" data-video="3JZ_D3ELwOQ">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Aramco Cave Simulator</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">View ↗</span></div>
+          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Aramco Cave Simulator</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span></div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
-        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Immersive Smart Experience">
+
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Immersive Smart Experience" data-video="ysz5S6PUM-U">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Immersive Smart Experience</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">View ↗</span></div>
+          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Immersive Smart Experience</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span></div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
-        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Interactive Library">
+
+        <a href="#" class="group relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 aspect-video" data-title="Interactive Library" data-video="oHg5SJYRHA0">
           <div class="absolute inset-0 bg-[url('https://img.youtube.com/vi/oHg5SJYRHA0/hqdefault.jpg')] bg-cover bg-center transition group-hover:scale-105"></div>
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Interactive Library</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">View ↗</span></div>
+          <div class="absolute inset-x-2 bottom-2 flex items-center justify-between"><span class="text-[11px] text-white/90 bg-black/50 px-2 py-1 rounded">Interactive Library</span><span class="text-[11px] bg-brand-500/80 px-2 py-1 rounded">Watch ▶</span></div>
           <div class="absolute inset-0 grid place-items-center pointer-events-none"><div class="h-8 w-8 rounded-full bg-black/60 ring-1 ring-white/20 grid place-items-center">▶</div></div>
         </a>
       </div>
@@ -378,10 +402,10 @@
           <p class="text-white/70">We’re here to answer your questions and listen to your suggestions.</p>
 
           <div class="mt-6 space-y-3 text-white/70">
-            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">📍</span> Saudi Arabia</div>
-            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">🏢</span> Balghonaim Tower, King Salman Road, AlKhobar</div>
-            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">📞</span> +966 53 3351308</div>
-            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">📧</span> info@engagei.net</div>
+            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10" aria-hidden="true">📍</span> Saudi Arabia</div>
+            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10" aria-hidden="true">🏢</span> Balghonaim Tower, King Salman Road, AlKhobar</div>
+            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10" aria-hidden="true">📞</span> +966 53 3351308</div>
+            <div class="flex items-center gap-3"><span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10" aria-hidden="true">📧</span> info@engagei.net</div>
             <div class="flex items-center gap-3 pt-2">
               <a href="#" class="text-white/70 hover:text-white underline">Twitter</a>
               <span class="text-white/30">•</span>
@@ -392,34 +416,67 @@
           </div>
         </div>
 
-        <form class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 space-y-4" onsubmit="handleSubmit(event)">
+        <form id="contactForm" class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 space-y-4">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
-              <label class="text-sm text-white/70">First Name <span class="text-red-400">*</span></label>
-              <input required type="text" name="first_name" placeholder="First" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
+              <label for="first_name" class="text-sm text-white/70">First Name <span class="text-red-400">*</span></label>
+              <input required type="text" id="first_name" name="first_name" placeholder="First" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
             </div>
             <div>
-              <label class="text-sm text-white/70">Last Name <span class="text-red-400">*</span></label>
-              <input required type="text" name="last_name" placeholder="Last" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
+              <label for="last_name" class="text-sm text-white/70">Last Name <span class="text-red-400">*</span></label>
+              <input required type="text" id="last_name" name="last_name" placeholder="Last" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
             </div>
           </div>
           <div>
-            <label class="text-sm text-white/70">Email <span class="text-red-400">*</span></label>
-            <input required type="email" name="email" placeholder="your@email.com" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
+            <label for="email" class="text-sm text-white/70">Email <span class="text-red-400">*</span></label>
+            <input required type="email" id="email" name="email" placeholder="your@email.com" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50"/>
           </div>
           <div>
-            <label class="text-sm text-white/70">Comment or Message</label>
-            <textarea required name="message" rows="5" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50" placeholder="Tell us about your project…"></textarea>
+            <label for="message" class="text-sm text-white/70">Comment or Message</label>
+            <textarea required id="message" name="message" rows="5" class="mt-1 w-full rounded-xl bg-black/40 ring-1 ring-white/10 px-4 py-2.5 outline-none focus:ring-brand-500/50" placeholder="Tell us about your project…"></textarea>
           </div>
           <div class="flex items-center justify-between gap-4 flex-wrap">
             <p class="text-xs text-white/50">By submitting, you agree to our terms and privacy policy.</p>
-            <button class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-3 rounded-xl font-medium shadow-glow transition" type="submit">Submit</button>
+            <button id="submitBtn" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-3 rounded-xl font-medium shadow-glow transition" type="submit">Submit</button>
           </div>
-          <p id="formMsg" class="text-sm text-brand-300 hidden">Thank you! Your draft email is ready to send.</p>
+          <p id="formMsg" class="text-sm text-brand-300 hidden">Thank you. Your message was sent.</p>
+          <p id="formErr" class="text-sm text-red-400 hidden">There was an issue. Try again or email info@engagei.net.</p>
         </form>
       </div>
     </div>
   </section>
+  <script>
+    (function(){
+      const videoModal = document.getElementById('video-modal');
+      const videoBackdrop = document.getElementById('videoBackdrop');
+      const videoClose = document.getElementById('videoClose');
+      const videoFrame = document.getElementById('videoFrame');
+
+      function openVideo(id){
+        if(!id) return;
+        videoFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+        videoModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeVideo(){
+        videoModal.classList.add('hidden');
+        videoFrame.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('[data-video]').forEach(card=>{
+        card.addEventListener('click', e=>{
+          e.preventDefault();
+          openVideo(card.dataset.video);
+        });
+      });
+      videoClose?.addEventListener('click', closeVideo);
+      videoBackdrop?.addEventListener('click', closeVideo);
+      document.addEventListener('keydown', e=>{
+        if(e.key === 'Escape' && !videoModal.classList.contains('hidden')) closeVideo();
+      });
+    })();
+  </script>
 
   <!-- Footer -->
   <footer class="border-t border-white/10 py-10">
@@ -437,32 +494,73 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
+    // ===== Config =====
+    // Optional endpoint for contact form (Formspree, Google Apps Script, custom API)
+    // Example: const FORMS_ENDPOINT = 'https://script.google.com/macros/s/XXXX/exec';
+    const FORMS_ENDPOINT = '';
+
+    // ===== Mobile menu toggle =====
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    function toggleMenu(){ if(mobileMenu) mobileMenu.classList.toggle('hidden'); }
+    function toggleMenu(){
+      if(!mobileMenu || !menuBtn) return;
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    }
     if(menuBtn){ menuBtn.addEventListener('click', toggleMenu); }
 
     // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Contact form: mailto draft (no backend)
-    function handleSubmit(e){
+    // ===== Contact form: progressive enhancement =====
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const msgOk = document.getElementById('formMsg');
+    const msgErr = document.getElementById('formErr');
+
+    form?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(e.target);
-      const first = data.get('first_name');
-      const last = data.get('last_name');
-      const email = data.get('email');
-      const message = data.get('message');
+      msgOk?.classList.add('hidden');
+      msgErr?.classList.add('hidden');
+
+      const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+
+      // If endpoint exists, POST JSON
+      if (FORMS_ENDPOINT) {
+        try {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending…';
+          const res = await fetch(FORMS_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!res.ok) throw new Error('Network');
+          form.reset();
+          msgOk?.classList.remove('hidden');
+        } catch (err) {
+          msgErr?.classList.remove('hidden');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit';
+        }
+        return;
+      }
+
+      // Fallback to mailto draft (no backend)
+      const first = payload.first_name || '';
+      const last = payload.last_name || '';
+      const email = payload.email || '';
+      const message = payload.message || '';
       const subject = encodeURIComponent(`New inquiry from ${first} ${last}`);
       const body = encodeURIComponent(`First Name: ${first}\nLast Name: ${last}\nEmail: ${email}\n\nMessage:\n${message}`);
       window.location.href = `mailto:info@engagei.net?subject=${subject}&body=${body}`;
-      const msg = document.getElementById('formMsg');
-      if (msg) msg.classList.remove('hidden');
-    }
+      msgOk?.classList.remove('hidden');
+    });
 
-    // Ensure autoplay on some mobile browsers
+    // ===== Background video: ensure autoplay, respect reduced motion =====
     const bg = document.getElementById('bgVideo');
     if (bg) {
       const play = bg.play();
@@ -471,10 +569,10 @@
       if (prm.matches) { bg.removeAttribute('autoplay'); bg.pause(); }
     }
 
-    // Mute toggle button
+    // ===== Mute toggle button with clear labels =====
     const bgMute = document.getElementById('bgMute');
     if (bg && bgMute) {
-      const syncLabel = () => { bgMute.textContent = bg.muted ? '🔇 Mute' : '🔊 Sound Off'; };
+      const syncLabel = () => { bgMute.textContent = bg.muted ? 'Sound on' : 'Sound off'; };
       syncLabel();
       bgMute.addEventListener('click', ()=>{ bg.muted = !bg.muted; syncLabel(); });
     }
@@ -515,17 +613,25 @@
     const svcClose = document.getElementById('svcClose');
     const svcBackdrop = document.getElementById('svcBackdrop');
 
+    let lastFocusedEl = null;
+
     function openService(id){
       const data = SERVICES_DATA[id];
       if(!data) return;
+      lastFocusedEl = document.activeElement;
       svcTitle.textContent = data.title;
       svcBody.innerHTML = data.body;
       svcDetail.classList.remove('hidden');
+      svcDetail.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      // Focus the close button for accessibility
+      svcClose?.focus();
     }
     function closeService(){
       svcDetail.classList.add('hidden');
+      svcDetail.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      lastFocusedEl?.focus?.();
     }
 
     function handleHash(){
@@ -537,8 +643,15 @@
 
     window.addEventListener('hashchange', handleHash);
     handleHash();
-    if(svcClose) svcClose.addEventListener('click', ()=> history.pushState('', document.title, window.location.pathname + window.location.search));
-    if(svcBackdrop) svcBackdrop.addEventListener('click', ()=> history.pushState('', document.title, window.location.pathname + window.location.search));
+
+    // Close via buttons/overlay/ESC
+    svcClose?.addEventListener('click', ()=> history.pushState('', document.title, window.location.pathname + window.location.search));
+    svcBackdrop?.addEventListener('click', ()=> history.pushState('', document.title, window.location.pathname + window.location.search));
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && !svcDetail.classList.contains('hidden')){
+        history.pushState('', document.title, window.location.pathname + window.location.search);
+      }
+    });
 
     // ===== Self-tests (runtime checks) =====
     (function(){
@@ -583,4 +696,15 @@
 
         // 5) Logo fallback template exists and onerror handler is safe
         const brandImg = document.querySelector('header img[alt="Engage Interactive"]');
-        const tmpl = document.get
+        const tmpl = document.getElementById('logoFallback');
+        console.assert(!!tmpl, 'logoFallback <template> must exist');
+        console.assert(!!brandImg && !!brandImg.getAttribute('onerror'), 'Brand image should have a guarded onerror handler');
+
+        console.groupEnd();
+      } catch(err){
+        console.warn('Self-tests error', err);
+      }
+    })();
+  </script>
+</body>
+</html>
